@@ -34,37 +34,35 @@ class DetailActivity : AppCompatActivity() {
             val movieId = extras.getString(EXTRA_MOVIE)
             if (movieId != null) {
                 viewModel.setSelectedData(movieId)
-                viewModel.getMovie()?.let { item ->
-                    populateMovie(item)
-                }
+                populateMovie(viewModel.getMovie())
             }
             else{
-                if (extras != null) {
-                    val tvId = extras.getString(EXTRA_TVSHOW)
-                    if (tvId != null) {
-                        viewModel.setSelectedData(tvId)
-                        viewModel.getTvShow()?.let { item ->
-                            populateTv(item)
-                        }
-                    }
+                val tvId = extras.getString(EXTRA_TVSHOW)
+                if (tvId != null) {
+                    viewModel.setSelectedData(tvId)
+                    populateTv(viewModel.getTvShow())
                 }
             }
         }
     }
 
     private fun populateMovie(data: MovieEntity) {
-        detail_title.text = data.title
+        movie_title.text = data.title
         movie_detail.text = data.description
-        movie_release_date.text = data.releaseDate
+        release_date.text = data.releaseDate
+        Glide.with(this).load(data.imagePath)
+            .into(bg_image)
         Glide.with(this).load(data.imagePath)
             .into(imgPoster)
         title = data.title
     }
 
     private fun populateTv(data: TvShowEntity) {
-        detail_title.text = data.title
+        movie_title.text = data.title
         movie_detail.text = data.description
-        movie_release_date.text = data.releaseDate
+        release_date.text =data.releaseDate
+        Glide.with(this).load(data.imagePath)
+            .into(bg_image)
         Glide.with(this).load(data.imagePath)
                 .into(imgPoster)
 

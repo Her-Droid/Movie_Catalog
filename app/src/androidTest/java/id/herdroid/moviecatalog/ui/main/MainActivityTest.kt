@@ -28,10 +28,10 @@ class MainActivityTest{
     @Test
     fun loadDetailMovie(){
         onView(withId(R.id.rv_movie)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
-        onView(withId(R.id.detail_title)).check(matches(isDisplayed()))
-        onView(withId(R.id.detail_title)).check(matches(withText(dataMovie[0].title)))
-        onView(withId(R.id.movie_release_date)).check(matches(isDisplayed()))
-        onView(withId(R.id.movie_release_date)).check(matches(withText(dataMovie[0].releaseDate)))
+        onView(withId(R.id.movie_title)).check(matches(isDisplayed()))
+        onView(withId(R.id.movie_title)).check(matches(withText(dataMovie[0].title)))
+        onView(withId(R.id.release_date)).check(matches(isDisplayed()))
+        onView(withId(R.id.release_date)).check(matches(withText(dataMovie[0].releaseDate)))
         onView(withId(R.id.movie_detail)).check(matches(isDisplayed()))
         onView(withId(R.id.movie_detail)).check(matches(withText(dataMovie[0].description)))
     }
@@ -47,12 +47,12 @@ class MainActivityTest{
     fun loadDetailTvShow(){
         onView(withText("TV SHOW")).perform(click())
         onView(withId(R.id.rv_tvShow)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
-        onView(withId(R.id.detail_title)).check(matches(isDisplayed()))
-        onView(withId(R.id.detail_title)).check(matches(withText(dataTvShow[0].title)))
-        onView(withId(R.id.movie_release_date)).check(matches(isDisplayed()))
-        onView(withId(R.id.movie_release_date)).check(matches(withText(dataTvShow[0].releaseDate)))
+        onView(withId(R.id.movie_title)).check(matches(isDisplayed()))
+        onView(withId(R.id.movie_title)).check(matches(withText(dataTvShow[0].title)))
+        onView(withId(R.id.release_date)).check(matches(isDisplayed()))
+        onView(withId(R.id.release_date)).check(matches(withText(dataTvShow[0].releaseDate)))
         onView(withId(R.id.movie_detail)).check(matches(isDisplayed()))
-        onView(withId(R.id.movie_detail)).check(matches(withText(dataTvShow[10].description)))
+        onView(withId(R.id.movie_detail)).check(matches(withText(dataTvShow[0].description)))
     }
 
 }

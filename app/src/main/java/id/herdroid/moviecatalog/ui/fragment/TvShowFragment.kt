@@ -9,9 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.herdroid.moviecatalog.R
-import id.herdroid.moviecatalog.adapter.MovieAdapter
 import id.herdroid.moviecatalog.adapter.TvShowAdapter
-import id.herdroid.moviecatalog.data.MovieEntity
 import id.herdroid.moviecatalog.enum.TypeData
 import id.herdroid.moviecatalog.viewmodel.MovieViewModel
 import id.herdroid.moviecatalog.viewmodel.TvShowViewModel
